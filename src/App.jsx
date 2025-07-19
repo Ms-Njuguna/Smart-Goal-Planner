@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import GoalContainer from '../components/GoalContainer'
-import AddNewGoalForm from '../components/AddNewGoalForm';
-import ErrorPopover from '../components/ErrorPopover';
+import GoalContainer from './components/GoalContainer'
+import AddNewGoalForm from './components/AddNewGoalForm';
+import ErrorPopover from './components/ErrorPopover';
 
 
 function App() {
