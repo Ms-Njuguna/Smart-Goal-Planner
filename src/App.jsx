@@ -32,7 +32,32 @@ function App() {
         })
       })
     })
+    .catch((error) => console.error("Error adding a new goal... :", error));
   };
+
+  const updateGoal = (goalId, updates) => {
+    const updatedGoal = goals.find((goal) => {goal.id === goalId})
+    const includedGoal = {...updatedGoal, ...updates}
+
+    fetch(`http://localhost:8002/goals/${goalId}`, {
+      method : "PATCH",
+      headers: {
+        "content-type" : "application/json"
+      },
+      body : JSON.stringify(includedGoal)
+    })
+    .then(res => res.json())
+    .then((returnedGoal) => {
+      setGoals((previousGoals) => {
+        previousGoals.map((goal) => {
+          returnedGoal.id === goal.id ? returnedGoal : goal;
+        })
+      });
+    })
+    .catch((error) => console.error("Error updating the goal...", error))
+  };
+
+  const deleteGoal = () => {};
 
   return (
     <>
