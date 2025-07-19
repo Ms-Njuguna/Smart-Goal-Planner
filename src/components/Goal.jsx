@@ -1,5 +1,6 @@
 import React from "react";
 import { differenceInDays } from 'date-fns';
+import GoalProgress from "./GoalProgress.jsx";
 
 function Goal({ name, category, target, saved, deadline, onUpdate, onDelete}) {
     const remaining = parseFloat(target - saved);
@@ -30,6 +31,9 @@ function Goal({ name, category, target, saved, deadline, onUpdate, onDelete}) {
            <td>{remaining}</td>
            <td>{deadline}</td>
            <td>{timeRemaining(deadline)}</td>
+           <td>
+            <GoalProgress target={target} remaining={remaining}/>
+           </td>
         </>
     )
 };
