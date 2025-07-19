@@ -57,7 +57,18 @@ function App() {
     .catch((error) => console.error("Error updating the goal...", error))
   };
 
-  const deleteGoal = () => {};
+  const deleteGoal = (goalId) => {
+    fetch(`http://localhost:8002/goals/${goalId}`, {
+      method: "DELETE"
+    })
+    .then((res) => res.json())
+    .then(() => {
+      setGoals((previousGoals) => 
+        previousGoals.filter((goal) => goal.id !== goalId)
+      );
+    })
+    .catch((error) => console.error("Error deleting the goal...", error));
+  };
 
   return (
     <>
