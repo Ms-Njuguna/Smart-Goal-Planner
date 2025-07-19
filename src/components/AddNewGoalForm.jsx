@@ -1,5 +1,5 @@
 import React from "react";
 
-function AddNewGoalForm() {};
+function AddNewGoalForm({ onAdd }) {};
 
 export default AddNewGoalForm;

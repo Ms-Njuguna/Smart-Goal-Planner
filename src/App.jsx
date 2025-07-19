@@ -78,6 +78,8 @@ function App() {
       <h1 class="text-3xl font-bold underline">
         Smart Goal Planner!
       </h1>
+      <GoalContainer goals={goals} onUpdate={updateGoal} onDelete={deleteGoal}/>
+      <AddNewGoalForm onAdd={addNewGoal}/>
     </>
   )
 }

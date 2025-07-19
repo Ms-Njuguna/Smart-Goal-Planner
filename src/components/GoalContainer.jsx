@@ -1,6 +1,10 @@
 import React from "react";
 import Goal from "./Goal";
 
-function GoalComponent() {};
+function GoalComponent({ goals, onUpdate, onDelete }) {
+    return (
+        <table></table>
+    )
+};
 
 export default GoalComponent;
