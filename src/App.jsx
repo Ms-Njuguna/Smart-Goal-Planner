@@ -66,12 +66,38 @@ function App() {
     .catch((error) => console.error("Error deleting the goal...", error));
   };
 
+  const depositToGoal = (goalId, amount) => {
+    const goal = goals.find((g) => g.id === goalId);
+    if (!goal) return;
+
+    const updatedGoal = {
+      ...goal,
+      savedAmount: goal.savedAmount + amount
+    };
+
+    fetch(`http://localhost:8002/goals/${goalId}`, {
+      method: 'PATCH',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(updatedGoal)
+    })
+    .then((res) => res.json())
+    .then((returnedGoal) => {
+      setGoals((prev) =>
+        prev.map((g) => (g.id === goalId ? returnedGoal : g))
+      );
+    })
+    .catch((error) => console.error('Error depositing into goal...', error));
+  };
+
+
   return (
     <>
       <h1 className="text-3xl font-bold underline">
         Smart Goal Planner!
       </h1>
-      <GoalContainer goals={goals} onUpdate={updateGoal} onDelete={deleteGoal} onAdd={addNewGoal} savedAmount={savedAmount}/>
+      <GoalContainer goals={goals} onUpdate={updateGoal} onDelete={deleteGoal} onAdd={addNewGoal} savedAmount={savedAmount} onDeposit={depositToGoal}/>
     </>
   )
 }

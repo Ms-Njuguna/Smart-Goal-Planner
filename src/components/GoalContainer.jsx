@@ -3,9 +3,10 @@ import Goal from "./Goal";
 import AddGoalDialog from "./AddGoalDialog";
 import DeleteGoalDialog from "./DeleteGoalDialog";
 import UpdateGoalDialog from "./UpdateGoalDialog";
-import { Edit2, Coins } from 'lucide-react';
+import DepositDialog from "./DepositDialog";
+import { Coins } from 'lucide-react';
 
-function GoalContainer({ goals, onAdd, savedAmount, onUpdate, onDelete }) {
+function GoalContainer({ goals, onAdd, savedAmount, onUpdate, onDelete, onDeposit }) {
     const [openDialog, setOpenDialog] = useState(false);
     
     return (
@@ -13,7 +14,7 @@ function GoalContainer({ goals, onAdd, savedAmount, onUpdate, onDelete }) {
            <div className="flex gap-4 items-center">
                <AddGoalDialog onAdd={onAdd} savedAmount={savedAmount} open={openDialog} setOpen={setOpenDialog} />
                <UpdateGoalDialog goals={goals} onUpdate={onUpdate} />
-               <button  title="Make Deposit" className="hover:text-yellow-600"><Coins size={18} /> Deposit</button>
+               <DepositDialog goals={goals} onDeposit={onDeposit}/>
                <DeleteGoalDialog goals={goals} onDelete={onDelete} />
            </div>
            <table>
