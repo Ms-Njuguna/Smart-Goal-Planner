@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import GoalContainer from './components/GoalContainer'
-import AddNewGoalForm from './components/AddNewGoalForm';
 import ErrorPopover from './components/ErrorPopover';
 
 
@@ -79,8 +78,7 @@ function App() {
       <h1 className="text-3xl font-bold underline">
         Smart Goal Planner!
       </h1>
-      <GoalContainer goals={goals} onUpdate={updateGoal} onDelete={deleteGoal}/>
-      <AddNewGoalForm onAdd={addNewGoal} saved={savedAmount}/>
+      <GoalContainer goals={goals} onUpdate={updateGoal} onDelete={deleteGoal} onAdd={addNewGoal} savedAmount={savedAmount}/>
     </>
   )
 }
