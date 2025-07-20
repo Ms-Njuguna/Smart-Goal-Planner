@@ -1,7 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 
 function AddNewGoalForm({ onAdd }) {
-    
+    const[name, setName] = useState("");
+    const[targtAmount, setTargetAmount] = useState("");
+    const[category, setCategory] = useState("");
+    const[deadline, setDeadline] = useState("");
 
     return(
         <form>
