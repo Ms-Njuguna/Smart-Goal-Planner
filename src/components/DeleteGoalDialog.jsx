@@ -1,0 +1,54 @@
+// src/components/DeleteGoalDialog.jsx
+import React, { useState } from 'react';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { Trash2 } from 'lucide-react';
+
+function DeleteGoalDialog({ goals, onDelete }) {
+  const [open, setOpen] = useState(false);
+  const [selectedGoalId, setSelectedGoalId] = useState("");
+
+  const handleDelete = () => {
+    if (selectedGoalId) {
+      onDelete(selectedGoalId);
+      setOpen(false); // manually close the dialog
+    }
+  };
+
+  return (
+    <>
+       <button onClick={() => setOpen(true)} className="hover:text-red-600 flex items-center gap-1">
+           <Trash2 size={18} /> Delete A Goal
+       </button>
+
+       <Dialog open={open} onOpenChange={setOpen}>
+           <DialogContent>
+               <DialogHeader>
+                  <DialogTitle>Select a Goal to Delete</DialogTitle>
+               </DialogHeader>
+
+               <select
+               className="w-full border p-2 rounded"
+               value={selectedGoalId}
+               onChange={(e) => setSelectedGoalId(e.target.value)}
+               >
+                   <option value="">-- Select Goal --</option>
+                   {goals.map((goal) => (
+                       <option key={goal.id} value={goal.id}>
+                           {goal.name} - {goal.category}
+                       </option>
+                    ))}
+                </select>
+
+                <button
+                    onClick={handleDelete}
+                    className="mt-4 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
+                >
+                Confirm Delete
+                </button>
+            </DialogContent>
+        </Dialog>
+    </>
+  );
+}
+
+export default DeleteGoalDialog;
