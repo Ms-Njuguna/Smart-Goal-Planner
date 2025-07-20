@@ -4,10 +4,12 @@ import AddGoalDialog from "./AddGoalDialog";
 import DeleteGoalDialog from "./DeleteGoalDialog";
 import UpdateGoalDialog from "./UpdateGoalDialog";
 import DepositDialog from "./DepositDialog";
-import { Coins } from 'lucide-react';
 
 function GoalContainer({ goals, onAdd, savedAmount, onUpdate, onDelete, onDeposit }) {
     const [openDialog, setOpenDialog] = useState(false);
+    const totalGoals = goals.length;
+    const totalSaved = goals.reduce((sum, goal) => sum + (goal.savedAmount || 0), 0);
+
     
     return (
         <>
@@ -45,8 +47,18 @@ function GoalContainer({ goals, onAdd, savedAmount, onUpdate, onDelete, onDeposi
                            </tr> 
                        );
                    })}
-            </tbody>
-        </table>
+               </tbody>
+           </table>
+           <div className="mt-8 bg-gray-50 border p-4 rounded-xl shadow-sm flex justify-around">
+                <div>
+                    <p className="text-sm text-gray-500">Total Goals</p>
+                    <p className="text-xl font-semibold text-black">{totalGoals}</p>
+                </div>
+                <div>
+                    <p className="text-sm text-gray-500">Total Saved</p>
+                    <p className="text-xl font-semibold text-green-600">Ksh {totalSaved.toLocaleString()}</p>
+                </div>
+            </div>
         </>
     )
 };
