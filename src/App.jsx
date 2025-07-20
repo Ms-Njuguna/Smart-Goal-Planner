@@ -18,7 +18,6 @@ function App() {
   }, []);
 
   const addNewGoal = (newGoal) => {
-    setGoals((previousGoals) => [...previousGoals, newGoal]);
 
     fetch("http://localhost:8002/goals", {
       method: "POST",
@@ -29,36 +28,30 @@ function App() {
     })
     .then((res) => res.json())
     .then((returnedGoal) => {
-      setGoals((previousGoals) => {
-        previousGoals.map((goal) => {
-          returnedGoal.id === newGoal.id ? returnedGoal : goal;
-        })
-      })
+      setGoals((previousGoals) => [...previousGoals, returnedGoal]);
     })
     .catch((error) => console.error("Error adding a new goal... :", error));
   };
 
   const updateGoal = (goalId, updates) => {
-    const updatedGoal = goals.find((goal) => {goal.id === goalId})
-    const includedGoal = {...updatedGoal, ...updates}
+    const updatedGoal = { ...goals.find(goal => goal.id === goalId), ...updates };
 
     fetch(`http://localhost:8002/goals/${goalId}`, {
-      method : "PATCH",
+      method: "PATCH",
       headers: {
-        "content-type" : "application/json"
+        "Content-Type": "application/json"
       },
-      body : JSON.stringify(includedGoal)
+      body: JSON.stringify(updatedGoal)
     })
     .then(res => res.json())
     .then((returnedGoal) => {
-      setGoals((previousGoals) => {
-        previousGoals.map((goal) => {
-          returnedGoal.id === goal.id ? returnedGoal : goal;
-        })
-      });
+      setGoals((prevGoals) =>
+        prevGoals.map(goal => (goal.id === returnedGoal.id ? returnedGoal : goal))
+      );
     })
-    .catch((error) => console.error("Error updating the goal...", error))
+    .catch((error) => console.error("Error updating the goal...", error));
   };
+
 
   const deleteGoal = (goalId) => {
     fetch(`http://localhost:8002/goals/${goalId}`, {

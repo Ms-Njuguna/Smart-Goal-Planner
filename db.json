@@ -10,15 +10,6 @@
       "createdAt": "2024-01-15"
     },
     {
-      "id": "2",
-      "name": "Emergency Fund",
-      "targetAmount": 10000,
-      "savedAmount": 7500,
-      "category": "Emergency",
-      "deadline": "2026-06-30",
-      "createdAt": "2023-05-01"
-    },
-    {
       "id": "3",
       "name": "New Laptop",
       "targetAmount": 1500,
@@ -46,15 +37,6 @@
       "createdAt": "2024-06-01"
     },
     {
-      "id": "6",
-      "name": "Education Fund",
-      "targetAmount": 20000,
-      "savedAmount": 5000,
-      "category": "Education",
-      "deadline": "2028-01-01",
-      "createdAt": "2024-04-20"
-    },
-    {
       "id": "7",
       "name": "Holiday Gifts",
       "targetAmount": 1000,
@@ -62,6 +44,15 @@
       "category": "Shopping",
       "deadline": "2024-08-10",
       "createdAt": "2024-07-01"
+    },
+    {
+      "id": "8",
+      "name": "New Phone",
+      "targetAmount": 1250,
+      "savedAmount": 0,
+      "category": "Electronics",
+      "deadline": "2025-01-31",
+      "createdAt": "2024-07-10"
     },
     {
       "id": "9",
@@ -80,42 +71,6 @@
       "category": "Home",
       "deadline": "2025-03-31",
       "createdAt": "2024-05-15"
-    },
-    {
-      "id": "c1dc",
-      "name": "Home Office set-up",
-      "targetAmount": 60000,
-      "savedAmount": 0,
-      "category": "Work",
-      "deadline": "2025-07-30",
-      "createdAt": "Sun Jul 20 2025 11:08:24 GMT+0300 (East Africa Time)"
-    },
-    {
-      "id": "bde2",
-      "name": "Buy the new PS7",
-      "targetAmount": 35200,
-      "savedAmount": 0,
-      "category": "Entertainment",
-      "deadline": "2025-08-22",
-      "createdAt": "Sun Jul 20 2025"
-    },
-    {
-      "id": "4a99",
-      "name": "Buy a piece of land",
-      "targetAmount": 150000,
-      "savedAmount": 0,
-      "category": "Investment",
-      "deadline": "2025-12-12",
-      "createdAt": "Sun Jul 20 2025"
-    },
-    {
-      "id": "49b7",
-      "name": "New Place",
-      "targetAmount": 20000,
-      "savedAmount": 0,
-      "category": "fun",
-      "deadline": "2025-11-01",
-      "createdAt": "2025-07-20"
     }
   ]
 }

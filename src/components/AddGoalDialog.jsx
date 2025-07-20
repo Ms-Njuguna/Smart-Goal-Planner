@@ -7,6 +7,7 @@ function AddGoalDialog({ onAdd, savedAmount, open, setOpen }) {
   return (
     <>
       <button 
+        type="button"
         onClick={() => setOpen(true)} 
         className="text-green-600 font-semibold border px-3 py-1 rounded hover:bg-green-50"
       >

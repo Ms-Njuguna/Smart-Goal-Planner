@@ -7,16 +7,18 @@ function DeleteGoalDialog({ goals, onDelete }) {
   const [open, setOpen] = useState(false);
   const [selectedGoalId, setSelectedGoalId] = useState("");
 
-  const handleDelete = () => {
+  const handleDelete = (e) => {
+    e.preventDefault();
     if (selectedGoalId) {
       onDelete(selectedGoalId);
       setOpen(false); // manually close the dialog
     }
+    console.log("Form submitted");
   };
 
   return (
     <>
-       <button onClick={() => setOpen(true)} className="hover:text-red-600 flex items-center gap-1">
+       <button type="button" onClick={() => setOpen(true)} className="hover:text-red-600 flex items-center gap-1">
            <Trash2 size={18} /> Delete A Goal
        </button>
 
@@ -40,6 +42,7 @@ function DeleteGoalDialog({ goals, onDelete }) {
                 </select>
 
                 <button
+                    type="button"
                     onClick={handleDelete}
                     className="mt-4 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
                 >
