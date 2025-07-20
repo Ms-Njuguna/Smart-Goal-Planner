@@ -28,10 +28,10 @@ function AddNewGoalForm({ onAdd, saved }) {
 
     return(
         <form onSubmit={handleSubmit}>
-            <input type="text" placeholder="Name..." value={name} onChange={(e) => setName(e.target.value)}></input>
-            <input type="text" placeholder="Target Amount..." value={targetAmount} onChange={(e) => setTargetAmount(e.target.value)}></input>
-            <input type="text" placeholder="Category..." value={category} onChange={(e) => setCategory(e.target.value)}></input>
-            <input type="text" placeholder="Deadline..." value={deadline} onChange={(e) => setDeadline(e.target.value)}></input>
+            <input type="text" placeholder="Name..." value={name} onChange={(e) => setName(e.target.value)} className="border border-gray-300 rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-indigo-500 my-2"></input>
+            <input type="text" placeholder="Target Amount..." value={targetAmount} onChange={(e) => setTargetAmount(e.target.value)} className="border border-gray-300 rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-indigo-500 my-2"></input>
+            <input type="text" placeholder="Category..." value={category} onChange={(e) => setCategory(e.target.value)} className="border border-gray-300 rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-indigo-500 my-2"></input>
+            <input type="text" placeholder="Deadline..." value={deadline} onChange={(e) => setDeadline(e.target.value)} className="border border-gray-300 rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-indigo-500 my-2"></input>
             <button type="submit">Add Goal</button>
         </form>
     );

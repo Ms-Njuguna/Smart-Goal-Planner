@@ -1,12 +1,10 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import GoalContainer from './components/GoalContainer'
-import ErrorPopover from './components/ErrorPopover';
-
 
 function App() {
   const[goals, setGoals] = useState([]);
-  const[savedAmount, setSavedAmount] = useState(0);
+  const savedAmount = 0;
 
   useEffect(() => {
     fetch("http://localhost:8002/goals")
@@ -94,8 +92,8 @@ function App() {
 
   return (
     <>
-      <h1 className="text-3xl font-bold underline">
-        Smart Goal Planner!
+      <h1 className="text-4xl font-extrabold text-indigo-600 mb-8 text-center">
+        Smart Goal Planner
       </h1>
       <GoalContainer goals={goals} onUpdate={updateGoal} onDelete={deleteGoal} onAdd={addNewGoal} savedAmount={savedAmount} onDeposit={depositToGoal}/>
     </>

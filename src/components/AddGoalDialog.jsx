@@ -9,7 +9,7 @@ function AddGoalDialog({ onAdd, savedAmount, open, setOpen }) {
       <button 
         type="button"
         onClick={() => setOpen(true)} 
-        className="text-green-600 font-semibold border px-3 py-1 rounded hover:bg-green-50"
+        className="flex items-center gap-2 px-4 py-2 rounded border font-semibold transitiontext-green-600 hover:bg-green-50"
       >
         <Plus size={18}/> Add New Goal
       </button>

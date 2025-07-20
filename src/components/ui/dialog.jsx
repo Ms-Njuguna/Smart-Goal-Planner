@@ -1,5 +1,4 @@
-// src/components/ui/dialog.jsx
-import React, { useState } from 'react';
+import React from 'react';
 
 export function Dialog({ open, onOpenChange, children }) {
   if (!open) return null;
@@ -12,18 +11,6 @@ export function Dialog({ open, onOpenChange, children }) {
       </div>
     </div>
   );
-}
-
-export function DialogTrigger({ asChild, children }) {
-  return React.cloneElement(children, {
-    onClick: (e) => {
-      if (children.props.onClick) children.props.onClick(e);
-      // Trigger dialog open
-      if (children.props.onOpenChange) {
-        children.props.onOpenChange(true);
-      }
-    }
-  });
 }
 
 export const DialogContent = ({ children }) => <div>{children}</div>;

@@ -24,7 +24,7 @@ function DepositDialog({ goals, onDeposit }) {
       <button 
         type="button"
         onClick={() => setOpen(true)}
-        className="text-yellow-600 font-semibold border px-3 py-1 rounded hover:bg-yellow-50 flex items-center gap-1"
+        className="flex items-center gap-2 px-4 py-2 rounded border font-semibold transition text-blue-600 hover:bg-blue-50"
       >
         <PiggyBank size={18} /> Deposit
       </button>
@@ -52,7 +52,7 @@ function DepositDialog({ goals, onDeposit }) {
             <input
               type="number"
               min="1"
-              className="w-full border p-2 rounded"
+              className="border border-gray-300 rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-indigo-500"
               placeholder="Enter amount to deposit"
               value={amount}
               onChange={(e) => setAmount(e.target.value)}

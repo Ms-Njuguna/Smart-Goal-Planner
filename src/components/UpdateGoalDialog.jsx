@@ -54,7 +54,7 @@ function UpdateGoalDialog({ goals, onUpdate }) {
       <button 
         type="button"
         onClick={() => setOpen(true)} 
-        className="hover:text-blue-600 flex items-center gap-1"
+        className="flex items-center gap-2 px-4 py-2 rounded border font-semibold transition text-yellow-600 hover:bg-yellow-50"
       >
         <Pencil size={18} /> Edit A Goal
       </button>
@@ -86,7 +86,7 @@ function UpdateGoalDialog({ goals, onUpdate }) {
                 placeholder="Goal Name"
                 value={formData.name}
                 onChange={handleInputChange}
-                className="border p-2 rounded"
+                className="border border-gray-300 rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-indigo-500"
               />
               <input
                 type="number"
@@ -94,7 +94,7 @@ function UpdateGoalDialog({ goals, onUpdate }) {
                 placeholder="Target Amount"
                 value={formData.targetAmount}
                 onChange={handleInputChange}
-                className="border p-2 rounded"
+                className="border border-gray-300 rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-indigo-500"
               />
               <input
                 type="text"
@@ -102,14 +102,14 @@ function UpdateGoalDialog({ goals, onUpdate }) {
                 placeholder="Category"
                 value={formData.category}
                 onChange={handleInputChange}
-                className="border p-2 rounded"
+                className="border border-gray-300 rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-indigo-500"
               />
               <input
                 type="date"
                 name="deadline"
                 value={formData.deadline}
                 onChange={handleInputChange}
-                className="border p-2 rounded"
+                className="border border-gray-300 rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-indigo-500"
               />
 
               <button

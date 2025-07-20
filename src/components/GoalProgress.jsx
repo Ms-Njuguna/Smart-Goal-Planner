@@ -7,13 +7,13 @@ function GoalProgress({ target = 100, remaining }) {
 
   return (
     <div className="flex items-center gap-2 w-full">
-      <Progress.Root className="bg-gray-200 w-full h-4 rounded overflow-hidden">
+      <Progress.Root className="bg-gray-200 w-full h-3 rounded overflow-hidden">
         <Progress.Indicator
-          className="bg-green-500 h-full transition-all duration-500"
+          className="bg-indigo-600 h-full transition-all duration-500"
           style={{ width: `${percentage}%` }}
         />
       </Progress.Root>
-      <span className="text-sm font-medium text-gray-700">{roundedPercentage}%</span>
+      <span className="text-sm font-medium text-gray-800">{roundedPercentage}%</span>
     </div>
   );
 }

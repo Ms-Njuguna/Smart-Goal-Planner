@@ -11,14 +11,14 @@ function DeleteGoalDialog({ goals, onDelete }) {
     e.preventDefault();
     if (selectedGoalId) {
       onDelete(selectedGoalId);
-      setOpen(false); // manually close the dialog
+      setOpen(false); 
     }
     console.log("Form submitted");
   };
 
   return (
     <>
-       <button type="button" onClick={() => setOpen(true)} className="hover:text-red-600 flex items-center gap-1">
+       <button type="button" onClick={() => setOpen(true)} className="flex items-center gap-2 px-4 py-2 rounded border font-semibold transition text-red-600 hover:bg-red-50">
            <Trash2 size={18} /> Delete A Goal
        </button>
 
