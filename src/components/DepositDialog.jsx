@@ -7,6 +7,7 @@ function DepositDialog({ goals, onDeposit }) {
   const [selectedGoalId, setSelectedGoalId] = useState('');
   const [amount, setAmount] = useState('');
 
+  //handles the deposit of any amount by the user
   const handleDeposit = (e) => {
     e.preventDefault();
     const depositValue = Number(amount);

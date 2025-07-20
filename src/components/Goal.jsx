@@ -11,6 +11,7 @@ function Goal({ name, category, target, saved, deadline, onUpdate, onDelete}) {
 
        const days = differenceInDays(lastDay, currentDay);
 
+       //handles the days left to deadline
        if (days < 0) {
            return <span className="text-red-600 font-semibold">Overdue</span>;
        } else if (days === 0) {
