@@ -7,6 +7,7 @@ import ErrorPopover from './components/ErrorPopover';
 
 function App() {
   const[goals, setGoals] = useState([]);
+  const[savedAmount, setSavedAmount] = useState(0);
 
   useEffect(() => {
     fetch("http://localhost:8002/goals")
@@ -75,11 +76,11 @@ function App() {
 
   return (
     <>
-      <h1 class="text-3xl font-bold underline">
+      <h1 className="text-3xl font-bold underline">
         Smart Goal Planner!
       </h1>
       <GoalContainer goals={goals} onUpdate={updateGoal} onDelete={deleteGoal}/>
-      <AddNewGoalForm onAdd={addNewGoal}/>
+      <AddNewGoalForm onAdd={addNewGoal} saved={savedAmount}/>
     </>
   )
 }

@@ -3,7 +3,7 @@ import { differenceInDays } from 'date-fns';
 import GoalProgress from "./GoalProgress.jsx";
 
 function Goal({ name, category, target, saved, deadline, onUpdate, onDelete}) {
-    const remaining = parseFloat(target - saved);
+    const remaining = parseFloat((target ?? 0) - (saved ?? 0));
 
     const timeRemaining = (deadline) => {
        const currentDay = new Date();
@@ -25,16 +25,16 @@ function Goal({ name, category, target, saved, deadline, onUpdate, onDelete}) {
 
     return (
         <>
-           <td>{name}</td>
-           <td>{category}</td>
-           <td>{target}</td>
-           <td>{saved}</td>
-           <td>{remaining}</td>
-           <td>{deadline}</td>
-           <td>{timeRemaining(deadline)}</td>
-           <td>
-            <GoalProgress target={target} remaining={remaining}/>
-           </td>
+            <td>{name}</td>
+            <td>{category}</td>
+            <td>{target}</td>
+            <td>{saved}</td>
+            <td>{remaining}</td>
+            <td>{deadline}</td>
+            <td>{timeRemaining(deadline)}</td>
+            <td>
+                <GoalProgress target={target} remaining={remaining}/>
+            </td>
         </>
     )
 };
